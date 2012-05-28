@@ -4,6 +4,8 @@
 Air Kinect Gesture Lib is a code library for use with Adobe AIR 3.0 and the Microsoft Kinect Native Extension written by the as3NUI team.( <https://github.com/AS3NUI/airkinect-2-core/> )
 You will find all the sources and a swc file in the bin folder.
 
+Video demo here : <http://www.youtube.com/watch?v=1L7EPo8bsAg&feature=plcp/>
+
 ##Requirements
 
 Actionscript IDE supporting AIR 3.0 projects. (Flash Builder 4.6, IntelliJ, FDT, ...)
