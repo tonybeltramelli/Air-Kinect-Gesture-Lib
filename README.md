@@ -12,28 +12,27 @@ A working Kinect and the airkinect-2-core.ane file in your project (install info
 
 Gestures :
 
-GestureDirection.SWIPE_HORIZONTAL;
-GestureDirection.SWIPE_RIGHT;
-GestureDirection.SWIPE_LEFT;
-GestureDirection.SWIPE_VERTICAL;
-GestureDirection.SWIPE_UP;
-GestureDirection.SWIPE_DOWN;
-GestureDirection.SWIPE_DEPTH;
-GestureDirection.SWIPE_FORWARD;
-GestureDirection.SWIPE_BACKWARD;
+ * GestureDirection.SWIPE_HORIZONTAL;
+ * GestureDirection.SWIPE_RIGHT;
+ * GestureDirection.SWIPE_LEFT;
+ * GestureDirection.SWIPE_VERTICAL;
+ * GestureDirection.SWIPE_UP;
+ * GestureDirection.SWIPE_DOWN;
+ * GestureDirection.SWIPE_DEPTH;
+ * GestureDirection.SWIPE_FORWARD;
+ * GestureDirection.SWIPE_BACKWARD;
 
 Movements :
 
-JumpMovement;
-BendDownMovement;
+ * JumpMovement;
+ * BendDownMovement;
 
 ##Syntax and code snippets
 
 You will find an example class in this repository.
 You can use the ActionScript3 native event system or the as3 Signal develop by Robert Penner. ( <https://github.com/robertpenner/as3-signals/> )
 
-<pre><code>
-//instantiation of an ActionManager with the stage frame rate in parameter in order to compute the gestures analysis
+<pre><code>//instantiation of an ActionManager with the stage frame rate in parameter in order to compute the gestures analysis
 _actionManager = new ActionManager(stage.frameRate);
 
 //creation of a gesture to track the left swipe with the left hand
@@ -49,15 +48,13 @@ _actionManager.add(rightHandLeftSwipe);
 
 Then in your enterFrame handler, add this line.
 
-<pre><code>
-//ask your ActionManager to compute and analyze user's actions
+<pre><code>//ask your ActionManager to compute and analyze user's actions
 _actionManager.compute(user);
 </code></pre>
 
 Here some code to show you how to use Signal instead of ActionScript3 Event.
 
-<pre><code>
-//by default, the dispatcher of all AUserAction will be an EventDispatcher but you can also use
+<pre><code>//by default, the dispatcher of all AUserAction will be an EventDispatcher but you can also use
 //the AS3 Signals by passing an instance of ActionSignalDispatcher to the AUserAction instance
 var jumpMovement : JumpMovement = new JumpMovement(new ActionSignalDispatcher());
 jumpMovement.dispatcher.addSignalListener(_jumpMovementOccured);
@@ -67,8 +64,7 @@ jumpMovement.dispatcher.addSignalListener(_jumpMovementOccured);
 
 Multiple gesture manager.
 
-<pre><code>
-//rather than create two gestures (UpSwipe and DownSwipe for example) you can use
+<pre><code>//rather than create two gestures (UpSwipe and DownSwipe for example) you can use
 //a VerticalSwipe to handle two gestures in only one instance
 var leftHandVerticalSwipe : VerticalSwipe = new VerticalSwipe(GesturePart.LEFT_HAND);
 leftHandVerticalSwipe.dispatcher.addEventListener(KinectGestureEvent.UP_SWIPE, _upSwipeWithLeftHandOccured);
