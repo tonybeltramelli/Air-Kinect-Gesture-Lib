@@ -73,7 +73,7 @@ leftHandVerticalSwipe.dispatcher.addEventListener(KinectGestureEvent.DOWN_SWIPE,
 //remove event listener like shown below
 //leftHandVerticalSwipe.dispatcher.removeEventListener(KinectGestureEvent.UP_SWIPE, _upSwipeWithLeftHandOccured);
 //leftHandVerticalSwipe.dispatcher.removeEventListener(KinectGestureEvent.DOWN_SWIPE, _downSwipeWithLeftHandOccured);
-      	
+        	
 //if you want to use Signal dispatcher with a two gestures handler (HorizontalSwipe, VerticalSwipe or DepthSwipe)
 //you can listen to your signal callback with the method below
 var leftFootHorizontalSwipe : HorizontalSwipe = new HorizontalSwipe(GesturePart.LEFT_FOOT, new ActionSignalDispatcher());
@@ -88,6 +88,6 @@ ActionSignalDispatcher(leftFootHorizontalSwipe.dispatcher).addSecondSignalListen
 
 I am still looking for impressions, critiques and suggestions so don't hesitate to contact me.
 My email is contact _at_ tonybeltramelli.com.
-I'm "Tbeltramelli" : <http://twitter.com/#!/tbeltramelli/>.
+Follow me on Twitter @Tbeltramelli : <http://twitter.com/#!/tbeltramelli/>.
 
 Have fun with this lib !
