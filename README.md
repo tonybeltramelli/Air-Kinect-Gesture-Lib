@@ -2,6 +2,7 @@
 ======================
 
 Air Kinect Gesture Lib is a code library for use with Adobe AIR 3.0 and the Microsoft Kinect Native Extension written by the as3NUI team.( <https://github.com/AS3NUI/airkinect-2-core/> )
+You will find all the sources and a swc file in the bin folder.
 
 ##Requirements
 
@@ -72,7 +73,7 @@ leftHandVerticalSwipe.dispatcher.addEventListener(KinectGestureEvent.DOWN_SWIPE,
 //remove event listener like shown below
 //leftHandVerticalSwipe.dispatcher.removeEventListener(KinectGestureEvent.UP_SWIPE, _upSwipeWithLeftHandOccured);
 //leftHandVerticalSwipe.dispatcher.removeEventListener(KinectGestureEvent.DOWN_SWIPE, _downSwipeWithLeftHandOccured);
-  		
+    	
 //if you want to use Signal dispatcher with a two gestures handler (HorizontalSwipe, VerticalSwipe or DepthSwipe)
 //you can listen to your signal callback with the method below
 var leftFootHorizontalSwipe : HorizontalSwipe = new HorizontalSwipe(GesturePart.LEFT_FOOT, new ActionSignalDispatcher());
