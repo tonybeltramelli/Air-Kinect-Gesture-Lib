@@ -14,7 +14,7 @@ package com.tonybeltramelli.airkinect.userAction {
 		protected const _LIMIT : int = 1000;
 
 		public function AUserAction(dispatcher : IActionOccurationDispatcher = null) {
-			dispatcher ||= new ActionEventDispatcher();
+			dispatcher == null ? _dispatcher = new ActionEventDispatcher() : _dispatcher = dispatcher;
 		}
 				
 		protected function _gestureDetected(direction : Number) : void {
