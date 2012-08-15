@@ -109,25 +109,45 @@ package com.tonybeltramelli.airkinect.debug {
 				_drawLineBetweenJoints(user, "left_shoulder", "right_shoulder");
 	
 				_drawLineBetweenJoints(user, "left_shoulder", "left_elbow");
-				_drawLineBetweenJoints(user, "left_elbow", "left_wrist");
-				_drawLineBetweenJoints(user, "left_wrist", "left_hand");
-				_drawLineBetweenJoints(user, "left_hand", "left_fingertip");
+				if(user.getJointByName("left_wrist"))
+				{
+					_drawLineBetweenJoints(user, "left_elbow", "left_wrist");
+					_drawLineBetweenJoints(user, "left_wrist", "left_hand");
+				}else{
+					_drawLineBetweenJoints(user, "left_elbow", "left_hand");
+				}
+				if(user.getJointByName("left_fingertip")) _drawLineBetweenJoints(user, "left_hand", "left_fingertip");
 	
 				_drawLineBetweenJoints(user, "right_shoulder", "right_elbow");
-				_drawLineBetweenJoints(user, "right_elbow", "right_wrist");
-				_drawLineBetweenJoints(user, "right_wrist", "right_hand");
-				_drawLineBetweenJoints(user, "right_hand", "right_fingertip");
+				if(user.getJointByName("right_wrist"))
+				{
+					_drawLineBetweenJoints(user, "right_elbow", "right_wrist");
+					_drawLineBetweenJoints(user, "right_wrist", "right_hand");
+				}else{
+					_drawLineBetweenJoints(user, "right_elbow", "right_hand");
+				}
+				if(user.getJointByName("right_fingertip")) _drawLineBetweenJoints(user, "right_hand", "right_fingertip");
 	
 				_drawLineBetweenJoints(user, "waist", "left_hip");
 				_drawLineBetweenJoints(user, "waist", "right_hip");
 	
 				_drawLineBetweenJoints(user, "left_hip", "left_knee");
-				_drawLineBetweenJoints(user, "left_knee", "left_ankle");
-				_drawLineBetweenJoints(user, "left_ankle", "left_foot");
+				if(user.getJointByName("left_ankle"))
+				{
+					_drawLineBetweenJoints(user, "left_knee", "left_ankle");
+					_drawLineBetweenJoints(user, "left_ankle", "left_foot");
+				}else{
+					_drawLineBetweenJoints(user, "left_knee", "left_foot");
+				}
 	
 				_drawLineBetweenJoints(user, "right_hip", "right_knee");
-				_drawLineBetweenJoints(user, "right_knee", "right_ankle");
-				_drawLineBetweenJoints(user, "right_ankle", "right_foot");
+				if(user.getJointByName("right_ankle"))
+				{
+					_drawLineBetweenJoints(user, "right_knee", "right_ankle");
+					_drawLineBetweenJoints(user, "right_ankle", "right_foot");
+				}else{
+					_drawLineBetweenJoints(user, "right_knee", "right_foot");
+				}
 			}
 			
 			if(_displayJoints)
