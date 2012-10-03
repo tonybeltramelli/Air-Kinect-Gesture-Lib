@@ -14,7 +14,7 @@ package com.tonybeltramelli.airkinect.userAction.movement {
 		}
 			
 		override public function compute(user : User) : void {
-			_jointProperty = user.torso.depthPosition.y;
+			_jointProperty = user.torso.position.depth.y;
 			super.compute(user);
 		}
 			

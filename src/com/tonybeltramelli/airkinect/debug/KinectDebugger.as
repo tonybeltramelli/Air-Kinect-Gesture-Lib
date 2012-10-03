@@ -154,7 +154,7 @@ package com.tonybeltramelli.airkinect.debug {
 			{
 				for each (var joint : SkeletonJoint in user.skeletonJoints) {
 					_skeleton.graphics.beginFill(0xd11df2);
-					_skeleton.graphics.drawCircle(joint.depthPosition.x, joint.depthPosition.y, 4);
+					_skeleton.graphics.drawCircle(joint.position.depth.x, joint.position.depth.y, 4);
 					_skeleton.graphics.endFill();
 				}
 			}
@@ -163,8 +163,8 @@ package com.tonybeltramelli.airkinect.debug {
 		}
 
 		private function _drawLineBetweenJoints(user : User, from : String, to : String) : void {
-			_skeleton.graphics.moveTo(user.getJointByName(from).depthPosition.x, user.getJointByName(from).depthPosition.y);
-			_skeleton.graphics.lineTo(user.getJointByName(to).depthPosition.x, user.getJointByName(to).depthPosition.y);
+			_skeleton.graphics.moveTo(user.getJointByName(from).position.depth.x, user.getJointByName(from).position.depth.y);
+			_skeleton.graphics.lineTo(user.getJointByName(to).position.depth.x, user.getJointByName(to).position.depth.y);
 		}
 
 		private function _positioning() : void {

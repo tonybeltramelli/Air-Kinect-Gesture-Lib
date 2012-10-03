@@ -22,7 +22,7 @@ package com.tonybeltramelli.airkinect.userAction.movement.abstract {
 		public function compute(user : User) : void {
 			_increment++;
 			
-			_gaps.push(user.getJointByName("waist").depthPosition.y - user.head.depthPosition.y);
+			_gaps.push(user.getJointByName("waist").position.depth.y - user.head.position.depth.y);
 			_allPos.push(_jointProperty);
 			
 			if(_increment == _speed)
@@ -32,7 +32,7 @@ package com.tonybeltramelli.airkinect.userAction.movement.abstract {
 				var gap : Number = max.value - min.value;
 				var gapReference : Number =  UMath.average(_gaps);
 				
-				if(gap > gapReference*_gapRatio && user.position.z > _LIMIT)
+				if(gap > gapReference*_gapRatio && user.position.world.z > _LIMIT)
 				{
 					max.i < min.i ? _gestureDetected(1) : _gestureDetected(-1);
 				}
