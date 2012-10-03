@@ -41,10 +41,10 @@ package com.tonybeltramelli.airkinect.userAction.gesture.abstract {
 			
 			_increment++;
 			
-			_gaps.push(user.getJointByName("waist").depthPosition.y - user.head.depthPosition.y);
-			_bodyPosX.push(user.torso.depthPosition.x);
-			_bodyPosY.push(user.torso.depthPosition.y);
-			_bodyPosZ.push(user.torso.position.z);
+			_gaps.push(user.getJointByName("waist").position.depth.y - user.head.position.depth.y);
+			_bodyPosX.push(user.torso.position.depth.x);
+			_bodyPosY.push(user.torso.position.depth.y);
+			_bodyPosZ.push(user.torso.position.world.z);
 			
 			if(!_wait || _gestureSettings.ignoreGestureBack) _allPos.push(_jointSettings.jointProperty);
 			if(!_wait && _increment == _speed)
@@ -57,7 +57,7 @@ package com.tonybeltramelli.airkinect.userAction.gesture.abstract {
 				var bodyYRef : Number = UMath.getMaxValueAndIndexV(_bodyPosY).value - UMath.getMinValueAndIndexV(_bodyPosY).value;
 				var bodyZRef : Number = UMath.getMaxValueAndIndexV(_bodyPosZ).value - UMath.getMinValueAndIndexV(_bodyPosZ).value;
 				
-				if(gap > gapReference*_jointSettings.gapRatio && user.position.z > _LIMIT && bodyXRef < _BODY_LIMIT_X*_jointSettings.gapRatio && bodyYRef < _BODY_LIMIT_Y*_jointSettings.gapRatio && bodyZRef < _BODY_LIMIT_Z)
+				if(gap > gapReference*_jointSettings.gapRatio && user.position.world.z > _LIMIT && bodyXRef < _BODY_LIMIT_X*_jointSettings.gapRatio && bodyYRef < _BODY_LIMIT_Y*_jointSettings.gapRatio && bodyZRef < _BODY_LIMIT_Z)
 				{
 					_gestureSettings.ignoreGestureBack ? _wait = true : _wait = false;
 					max.i < min.i ? _gestureDetected(1) : _gestureDetected(-1);

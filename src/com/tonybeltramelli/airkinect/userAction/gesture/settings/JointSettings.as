@@ -30,13 +30,13 @@ package com.tonybeltramelli.airkinect.userAction.gesture.settings {
 					break;
 				case GesturePart.RIGHT_HAND :
 					jointToTrack = user.rightHand;
-					_gapRatio = 1.1;
-					_waitRatio = 1;
+					_gapRatio = 0.3;
+					_waitRatio = 0.1;
 					break;
 				case GesturePart.LEFT_HAND :
 					jointToTrack = user.leftHand;
-					_gapRatio = 1.1;
-					_waitRatio = 1;
+					_gapRatio = 0.3;
+					_waitRatio = 0.1;
 					break;
 				case GesturePart.RIGHT_FOOT :
 					jointToTrack = user.rightFoot;
@@ -81,13 +81,13 @@ package com.tonybeltramelli.airkinect.userAction.gesture.settings {
 			switch (_axis)
 			{
 				case "x":
-					_jointProperty = joint.depthPosition.x;
+					_jointProperty = joint.position.depth.x;
 					break;
 				case "y":
-					_jointProperty = joint.depthPosition.y;
+					_jointProperty = joint.position.depth.y;
 					break;
 				case "z":
-					_jointProperty = joint.position.z;
+					_jointProperty = joint.position.world.z;
 					_gapRatio = _gapRatio*7;
 					break;
 				default :
