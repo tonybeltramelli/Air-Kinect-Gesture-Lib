@@ -36,7 +36,8 @@ Movements :
 You will find an example class in this repository.
 You can use the ActionScript3 native event system or the as3 Signal develop by Robert Penner. ( <https://github.com/robertpenner/as3-signals/> )
 
-<pre><code>//instantiation of an ActionManager with the stage frame rate in parameter in order to compute the gestures analysis
+```actionscript
+//instantiation of an ActionManager with the stage frame rate in parameter in order to compute the gestures analysis
 _actionManager = new ActionManager(stage.frameRate);
 
 //creation of a gesture to track the left swipe with the left hand
@@ -48,7 +49,7 @@ rightHandLeftSwipe.dispatcher.addEventListener(KinectGestureEvent.LEFT_SWIPE, _l
 
 //in order to works, don't forget to add your gestures and / or movements to your ActionManager instance
 _actionManager.add(rightHandLeftSwipe);
-</code></pre>
+```
 
 Then in your enterFrame handler, add this line.
 
