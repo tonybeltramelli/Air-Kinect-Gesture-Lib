@@ -53,23 +53,26 @@ _actionManager.add(rightHandLeftSwipe);
 
 Then in your enterFrame handler, add this line.
 
-<pre><code>//ask your ActionManager to compute and analyze user's actions
+```actionscript
+//ask your ActionManager to compute and analyze user's actions
 _actionManager.compute(user);
-</code></pre>
+```
 
 Here some code to show you how to use Signal instead of ActionScript3 Event.
 
-<pre><code>//by default, the dispatcher of all AUserAction will be an EventDispatcher but you can also use
+```actionscript
+//by default, the dispatcher of all AUserAction will be an EventDispatcher but you can also use
 //the AS3 Signals by passing an instance of ActionSignalDispatcher to the AUserAction instance
 var jumpMovement : JumpMovement = new JumpMovement(new ActionSignalDispatcher());
 jumpMovement.dispatcher.addSignalListener(_jumpMovementOccured);
 //for a signal dispatcher, you can remove your listener this way
 //jumpMovement.dispatcher.removeSignalListener(_jumpMovementOccured);
-</code></pre>
+```
 
 Multiple gesture manager.
 
-<pre><code>//rather than create two gestures (UpSwipe and DownSwipe for example) you can use
+```actionscript
+//rather than create two gestures (UpSwipe and DownSwipe for example) you can use
 //a VerticalSwipe to handle two gestures in only one instance
 var leftHandVerticalSwipe : VerticalSwipe = new VerticalSwipe(GesturePart.LEFT_HAND);
 leftHandVerticalSwipe.dispatcher.addEventListener(KinectGestureEvent.UP_SWIPE, _upSwipeWithLeftHandOccured);
@@ -86,7 +89,7 @@ ActionSignalDispatcher(leftFootHorizontalSwipe.dispatcher).addSecondSignalListen
 //with the same logic, you can easily remove your signal listener
 //leftFootHorizontalSwipe.dispatcher.removeSignalListener(_horizontalLeftFootSwipeDirectionOne);
 //ActionSignalDispatcher(leftFootHorizontalSwipe.dispatcher).removeSecondSignalListener(_horizontalLeftFootSwipeDirectionTwo);
-</code></pre>
+```
 
 ##Contact
 
