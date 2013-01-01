@@ -2,13 +2,11 @@ package com.tonybeltramelli.lib.debug {
 	import com.tonybeltramelli.lib.display.ASprite;
 	import com.tonybeltramelli.lib.text.TextStyle;
 	import com.tonybeltramelli.lib.utils.math.UMath;
+	
 	import flash.display.Shape;
 	import flash.events.Event;
 	import flash.text.TextField;
 	import flash.utils.getTimer;
-	import flashx.textLayout.formats.TextAlign;
-
-
 
 	/**
 	 * @author Tony Beltramelli - www.tonybeltramelli.com
@@ -40,7 +38,7 @@ package com.tonybeltramelli.lib.debug {
 			_max = stage.frameRate;
 			
 			_textFieldFPS = new TextField();
-			TextStyle.apply(_textFieldFPS, "_sans", "", TextAlign.LEFT, 10, "#333333");
+			TextStyle.apply(_textFieldFPS, "_sans", "", "left", 10, "#333333");
 			_setText(0);
 			addChild(_textFieldFPS);
 			
@@ -91,12 +89,12 @@ package com.tonybeltramelli.lib.debug {
 		private function _setText(currentFPSValue : Number) : void
 		{
 			if(currentFPSValue <= _LIMIT){
-				TextStyle.apply(_textFieldFPS, "_sans", "", TextAlign.LEFT, 10, "#e53c3c");
+				TextStyle.apply(_textFieldFPS, "_sans", "", "left", 10, "#e53c3c");
 			}else if(currentFPSValue >= stage.frameRate)
 			{
-				TextStyle.apply(_textFieldFPS, "_sans", "", TextAlign.LEFT, 10, "#0fa127");
+				TextStyle.apply(_textFieldFPS, "_sans", "", "left", 10, "#0fa127");
 			}else{
-				TextStyle.apply(_textFieldFPS, "_sans", "", TextAlign.LEFT, 10, "#333333");
+				TextStyle.apply(_textFieldFPS, "_sans", "", "left", 10, "#333333");
 			}
 			_textFieldFPS.text = currentFPSValue + " / "+stage.frameRate+" FPS";
 		}
