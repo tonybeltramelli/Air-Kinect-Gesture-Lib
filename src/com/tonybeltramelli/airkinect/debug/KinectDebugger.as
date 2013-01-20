@@ -5,6 +5,7 @@ package com.tonybeltramelli.airkinect.debug {
 	import com.as3nui.nativeExtensions.air.kinect.events.CameraImageEvent;
 	import com.tonybeltramelli.lib.debug.AppPerf;
 	import com.tonybeltramelli.lib.display.ASprite;
+
 	import flash.display.Bitmap;
 	import flash.display.BlendMode;
 	import flash.display.Shape;
@@ -104,50 +105,28 @@ package com.tonybeltramelli.airkinect.debug {
 				_skeleton.graphics.lineStyle(2, 0x50ae64);
 				_drawLineBetweenJoints(user, "head", "neck");
 				_drawLineBetweenJoints(user, "neck", "torso");
-				_drawLineBetweenJoints(user, "torso", "waist");
+				
+				_drawLineBetweenJoints(user, "torso", "left_shoulder");
+				_drawLineBetweenJoints(user, "torso", "right_shoulder");
 	
 				_drawLineBetweenJoints(user, "left_shoulder", "right_shoulder");
-	
+				
 				_drawLineBetweenJoints(user, "left_shoulder", "left_elbow");
-				if(user.getJointByName("left_wrist"))
-				{
-					_drawLineBetweenJoints(user, "left_elbow", "left_wrist");
-					_drawLineBetweenJoints(user, "left_wrist", "left_hand");
-				}else{
-					_drawLineBetweenJoints(user, "left_elbow", "left_hand");
-				}
-				if(user.getJointByName("left_fingertip")) _drawLineBetweenJoints(user, "left_hand", "left_fingertip");
-	
+				_drawLineBetweenJoints(user, "left_elbow", "left_hand");
+				
 				_drawLineBetweenJoints(user, "right_shoulder", "right_elbow");
-				if(user.getJointByName("right_wrist"))
-				{
-					_drawLineBetweenJoints(user, "right_elbow", "right_wrist");
-					_drawLineBetweenJoints(user, "right_wrist", "right_hand");
-				}else{
-					_drawLineBetweenJoints(user, "right_elbow", "right_hand");
-				}
-				if(user.getJointByName("right_fingertip")) _drawLineBetweenJoints(user, "right_hand", "right_fingertip");
-	
-				_drawLineBetweenJoints(user, "waist", "left_hip");
-				_drawLineBetweenJoints(user, "waist", "right_hip");
-	
+				_drawLineBetweenJoints(user, "right_elbow", "right_hand");
+				
+				_drawLineBetweenJoints(user, "left_hip", "right_hip");
+				
+				_drawLineBetweenJoints(user, "torso", "right_hip");
+				_drawLineBetweenJoints(user, "torso", "left_hip");
+				
 				_drawLineBetweenJoints(user, "left_hip", "left_knee");
-				if(user.getJointByName("left_ankle"))
-				{
-					_drawLineBetweenJoints(user, "left_knee", "left_ankle");
-					_drawLineBetweenJoints(user, "left_ankle", "left_foot");
-				}else{
-					_drawLineBetweenJoints(user, "left_knee", "left_foot");
-				}
-	
+				_drawLineBetweenJoints(user, "left_knee", "left_foot");
+				
 				_drawLineBetweenJoints(user, "right_hip", "right_knee");
-				if(user.getJointByName("right_ankle"))
-				{
-					_drawLineBetweenJoints(user, "right_knee", "right_ankle");
-					_drawLineBetweenJoints(user, "right_ankle", "right_foot");
-				}else{
-					_drawLineBetweenJoints(user, "right_knee", "right_foot");
-				}
+				_drawLineBetweenJoints(user, "right_knee", "right_foot");
 			}
 			
 			if(_displayJoints)

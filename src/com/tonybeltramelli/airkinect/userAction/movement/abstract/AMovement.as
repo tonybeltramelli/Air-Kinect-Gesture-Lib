@@ -15,6 +15,9 @@ package com.tonybeltramelli.airkinect.userAction.movement.abstract {
 		
 		public function AMovement(dispatcher : IActionOccurationDispatcher = null) {
 			super(dispatcher);
+			
+			_amplitudeRatio = 1;
+			
 			_allPos = new Vector.<Number>();
 			_gaps = new Vector.<Number>();
 		}
@@ -22,7 +25,7 @@ package com.tonybeltramelli.airkinect.userAction.movement.abstract {
 		public function compute(user : User) : void {
 			_increment++;
 			
-			_gaps.push(user.getJointByName("waist").position.depth.y - user.head.position.depth.y);
+			_gaps.push(_getUserGap(user) - user.head.position.depth.y);
 			_allPos.push(_jointProperty);
 			
 			if(_increment == _speed)

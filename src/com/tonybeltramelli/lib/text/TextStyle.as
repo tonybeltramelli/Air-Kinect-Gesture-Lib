@@ -1,5 +1,6 @@
 package com.tonybeltramelli.lib.text {
 	import com.tonybeltramelli.lib.utils.color.Color;
+
 	import flash.text.Font;
 	import flash.text.TextField;
 	import flash.text.TextFormat;

@@ -25,6 +25,9 @@ package com.tonybeltramelli.airkinect.userAction.gesture.abstract {
 		
 		public function AGesture(settings : GestureSettings, dispatcher : IActionOccurationDispatcher = null) {
 			super(dispatcher);
+			
+			_amplitudeRatio = 2;
+			
 			_gestureSettings = settings;
 			_jointSettings = new JointSettings(settings.part, settings.axis);
 			
@@ -41,7 +44,7 @@ package com.tonybeltramelli.airkinect.userAction.gesture.abstract {
 			
 			_increment++;
 			
-			_gaps.push(user.getJointByName("waist").position.depth.y - user.head.position.depth.y);
+			_gaps.push(_getUserGap(user) - user.head.position.depth.y);
 			_bodyPosX.push(user.torso.position.depth.x);
 			_bodyPosY.push(user.torso.position.depth.y);
 			_bodyPosZ.push(user.torso.position.world.z);

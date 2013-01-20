@@ -33,14 +33,15 @@ package com.tonybeltramelli.KinectGestureLibTest {
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.nativeWindow.visible = true;
+			stage.frameRate = 60;
 			
 			if(Kinect.isSupported())
 			{
-				_init();
+				_build();
 			}
 		}
 		
-		private function _init() : void
+		private function _build() : void
 		{
 			//create a new textfield to display the actions detections
 			_textField = new TextField();
@@ -51,11 +52,15 @@ package com.tonybeltramelli.KinectGestureLibTest {
 
 			var settings : KinectSettings = new KinectSettings();
 			settings.skeletonEnabled = true;
+			//if you want to display RGB and depth layers, don't forget to set you Kinect settings this way 
+			//settings.rgbEnabled = true;
+			//settings.depthEnabled = true;
 
 			_kinect.start(settings);
 			_kinect.addEventListener(DeviceEvent.STARTED, _started);
 
 			//kinect feedback to display skeleton and joints
+			//if you want to enabled RGB and depth layers, don't forget to set you Kinect settings as line 55 
 			_debugger = new KinectDebugger(_kinect, true, true, false, false);
 			addChild(_debugger);
 			
