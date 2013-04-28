@@ -93,8 +93,7 @@ ActionSignalDispatcher(leftFootHorizontalSwipe.dispatcher).addSecondSignalListen
 
 ##Contact
 
-I am still looking for impressions, critiques and suggestions so don't hesitate to contact me.
-My email is contact _at_ tonybeltramelli.com.
+I am still looking for impressions, critiques and suggestions so don't hesitate to contact me. <http://www.tonybeltramelli.com/contact>
 Follow me on Twitter @Tbeltramelli : <http://twitter.com/#!/tbeltramelli/>.
 
 Have fun with this lib !
