@@ -103,7 +103,7 @@ package com.tonybeltramelli.KinectGestureLibTest {
 			_actionManager.add(rightHandLeftSwipe);
 			_actionManager.add(jumpMovement);
 			_actionManager.add(leftHandVerticalSwipe);
-			_actionManager.add(leftFootHorizontalSwipe);
+			_actionManager.add(leftFootHorizontalSwipe);	
 		}
 		
 		private function _started(event : DeviceEvent) : void {
@@ -113,6 +113,9 @@ package com.tonybeltramelli.KinectGestureLibTest {
 
 		private function _enterFrame(event : Event) : void
 		{
+			//choose between 1 or 2
+			
+			//1 process every users
 			for each(var user : User in _kinect.users)
 			{
 				//draw the kinect feedback in the debugger
@@ -122,7 +125,38 @@ package com.tonybeltramelli.KinectGestureLibTest {
 				_actionManager.compute(user);	
 			}
 			
+			//2 process only one user
+			if(_kinect.users.length != 0)
+			{
+				//get the nearest user only
+				var uniqueUser : User = _getUniqueUser(_kinect.users);
+			
+				//draw the kinect feedback in the debugger
+				_debugger.draw(uniqueUser);
+				
+				//ask your ActionManager to compute and analyze user's actions
+				_actionManager.compute(uniqueUser);
+			}
+			
 			_positioning();
+		}
+		
+		private function _getUniqueUser(usersWithSkeleton : Vector.<User>) : User {
+			var i : int = 0;
+			var userNumber : int = usersWithSkeleton.length;
+			var user : User = usersWithSkeleton[i];
+
+			if (userNumber > 1) {
+				for (i = 0; i < userNumber; i++)
+				{	
+					if(usersWithSkeleton[i].position.world.z < user.position.world.z)
+					{
+						user = usersWithSkeleton[i];
+					}
+				}
+			}
+			
+			return user;
 		}
 		
 		private function _leftSwipeWithRightHandOccured(event : KinectGestureEvent) : void
