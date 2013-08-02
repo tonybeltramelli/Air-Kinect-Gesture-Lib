@@ -34,7 +34,7 @@ Movements :
 ##Syntax and code snippets
 
 You will find an example class in this repository.
-You can use the ActionScript3 native event system or the as3 Signal develop by Robert Penner. ( <https://github.com/robertpenner/as3-signals/> )
+You can use the ActionScript3 native event system or the as3 Signal developed by Robert Penner. ( <https://github.com/robertpenner/as3-signals/> )
 
 ```actionscript
 //instantiation of an ActionManager with the stage frame rate in parameter in order to compute the gestures analysis
