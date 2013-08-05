@@ -113,17 +113,17 @@ package com.tonybeltramelli.KinectGestureLibTest {
 
 		private function _enterFrame(event : Event) : void
 		{
-			//choose between 1 or 2
+			//choose between 1 and 2
 			
 			//1 process every users
-			for each(var user : User in _kinect.users)
+			/*for each(var user : User in _kinect.users)
 			{
 				//draw the kinect feedback in the debugger
 				_debugger.draw(user);
 				
 				//ask your ActionManager to compute and analyze user's actions
 				_actionManager.compute(user);	
-			}
+			}*/
 			
 			//2 process only one user
 			if(_kinect.users.length != 0)
