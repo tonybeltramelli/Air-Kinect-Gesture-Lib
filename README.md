@@ -7,6 +7,10 @@ You will find all the sources and a swc file in the bin folder.
 * Video demo here : <http://www.youtube.com/watch?v=1L7EPo8bsAg&feature=plcp/>
 * AIR application control demo video and gestures recognition : <http://youtu.be/izOJjuomgGg/>
 
+##Important notes
+
+This project is not updated anymore, dependencies issues with the newest version of as3NUI might exist.
+
 ##Requirements
 
 Actionscript IDE supporting AIR 3.0 projects. (Flash Builder 4.6, IntelliJ, FDT, ...)
